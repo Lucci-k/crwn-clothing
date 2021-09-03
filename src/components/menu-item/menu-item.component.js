@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import '../../css/menu-item.styles.css'
 
-const MenuItem = ({title, imageUrl, size}) => (
-  <div className={`${size} menu-item`}>
+const MenuItem = ({title, imageUrl, size, linkUrl, history, match}) => (
+  <div className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div className='background-image' style={{
       backgroundImage: `url(${imageUrl})`
     }}  />
@@ -13,4 +14,5 @@ const MenuItem = ({title, imageUrl, size}) => (
   </div>
 );
 
-export default MenuItem;
+//withRouter return superpower component with access to history location etc 
+export default withRouter(MenuItem);

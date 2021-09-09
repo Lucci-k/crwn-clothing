@@ -22,6 +22,11 @@
 .menu-item.large {
   height: 380px;
 }
+@media screen and (max-width: 800px) {
+  .menu-item.large {
+    height: 240px;
+  }
+}
 .menu-item:first-child {
   margin-right: 7.5px;
 }
